@@ -29,6 +29,14 @@ h3 {
     font-size: 100%;
 }
 
+p {
+    text-align: center;
+    color: rgb(255, 255, 0);
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 1);
+    font-family: 'Starwars';
+    font-size: 1.1rem;
+}
+
 body {
     background-image: url(../img/bg.png);
     background-size:auto;
@@ -42,7 +50,7 @@ body {
 
 .card-container {
     display: flex;
-    width: 50vw;
+    width: 75vw;
     align-items: center;
     justify-content: center;
     padding: 2rem;
@@ -72,6 +80,7 @@ body {
 
 .rd2d {
     z-index: 4;
+    transform: translateY(-40px);
 }
 
 .rd2d:hover {
@@ -112,17 +121,45 @@ body {
     -webkit-box-shadow: 0px 0px 42px 4px rgba(255,255,0,.3);
     -moz-box-shadow: 0px 0px 42px 4px rgba(255,255,0,.3);
     box-shadow: 0px 0px 42px 4px rgba(255,255,0,.3);
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
 }
 
 article img {
     margin-top: 1vh;
     width: 100%;
-    border: 1px solid black;
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    background-color: white;
 }
 
 .info-container {
     width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    margin: auto auto auto auto;
 }
+
+.info-container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.info-container a svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    margin: auto auto auto auto;
+}
+

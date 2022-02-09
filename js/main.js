@@ -8,14 +8,14 @@ function info(personaje){
         var infoContainer = document.createElement("section");
         infoContainer.className = "info-container";
         infoContainer.id = "info-container";
-        document.body.appendChild(infoContainer);
+        document.getElementById("main").appendChild(infoContainer);
     } else {
         document.getElementById("info-container").innerHTML = "";
     }
     var h1 = document.createElement("h1");
     var nombre = function(){
         if (id == "chewbaca") {
-            return "Chewbaca";
+            return "Chewbacca";
         } else if (id == "darthvader"){
             return "Darth vader";
         } else if (id == "rd2d"){
@@ -28,5 +28,46 @@ function info(personaje){
     }
     h1.innerHTML = "STAR WARS - " + nombre();
     document.getElementById("info-container").appendChild(h1);  
-    
+    fetch("https://swapi.dev/api/people/?search=" + nombre() + "&format=json")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        var datos = data.results[0];
+        console.log(datos);
+        var infoContainer = document.getElementById("info-container");
+        var p = document.createElement("p");
+        p.innerHTML = "Altura: " + datos.height;
+        infoContainer.appendChild(p);
+        var p = document.createElement("p");
+        p.innerHTML = "Peso: " + datos.mass;
+        infoContainer.appendChild(p);
+        var p = document.createElement("p");
+        p.innerHTML = "Color de pelo: " + datos.hair_color;
+        infoContainer.appendChild(p);
+        var p = document.createElement("p");
+        p.innerHTML = "Color de ojos: " + datos.eye_color;
+        infoContainer.appendChild(p);
+        var p = document.createElement("p");
+        p.innerHTML = "Color de piel: " + datos.skin_color;
+        infoContainer.appendChild(p);
+        var p = document.createElement("p");
+        p.innerHTML = "Genero: " + datos.gender;
+        infoContainer.appendChild(p);
+        var p = document.createElement("p");
+        p.innerHTML = "Cumpleaños: " + datos.birth_year;
+        infoContainer.appendChild(p);
+        var enlace = document.createElement("a");
+        enlace.id = "moreInfo";
+        enlace.className = "moreInfo";
+        enlace.href = "#masInfo";
+        var article = document.createElement("article");
+        article.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-down-circle" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffec00" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"/> <circle cx="12" cy="12" r="9" /> <line x1="8" y1="12" x2="12" y2="16" /> <line x1="12" y1="8" x2="12" y2="16" /> <line x1="16" y1="12" x2="12" y2="16" /> </svg>';
+        enlace.appendChild(article);
+        infoContainer.appendChild(enlace);
+
+        
+
+    });
+
 }
