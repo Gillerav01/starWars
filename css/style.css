@@ -46,6 +46,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    margin-top: 5vh;
 }
 
 .card-container {
@@ -54,6 +61,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    margin: auto;
 }
 
 .chewbaca {
@@ -147,14 +155,14 @@ article img {
     margin: auto auto auto auto;
 }
 
-.info-container a {
+.info-container section {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-}
+} 
 
-.info-container a svg {
+.info-container section svg {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,4 +170,6 @@ article img {
     align-self: center;
     margin: auto auto auto auto;
 }
-
+#masInformacion:hover {
+    cursor: pointer;
+}
