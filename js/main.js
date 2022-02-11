@@ -73,11 +73,8 @@ async function info(personaje) {
                 var informacion = document.createElement("section");
                 informacion.className = "informacion";
                 informacion.id = "informacion";
-                var h1 = document.createElement("h1");
-                h1.innerHTML = "información";
-                informacion.appendChild(h1);
                 document.getElementById("main").appendChild(informacion);
-                // document.body.appendChild(informacion);
+                
                 if (naves.length > 0) {
                     var seccionNaves = document.createElement("section");
                     seccionNaves.className = "seccionNaves";
